@@ -1,6 +1,5 @@
-# Change these first
-owner: gamechanger1s  # Your GitHub username
-repo: upptime  # Your repository name
+owner: gamechanger1s
+repo: upptime
 
 sites:
   - name: Portfolio Website
@@ -11,12 +10,11 @@ sites:
     url: https://chinmayportfolio.vercel.app/uptime
 
 status-website:
-  # Remove cname since you're using Vercel
   baseUrl: /upptime
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
   name: Chinmay's Portfolio
   introTitle: "System Status & Uptime"
-  introMessage: Real-time monitoring of portfolio infrastructure and services
+  introMessage: Real-time monitoring of portfolio infrastructure
   navbar:
     - title: Status
       href: /
