@@ -14,7 +14,7 @@ status-website:
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
   name: Chinmay's Portfolio
   introTitle: "System Status & Uptime"
-  introMessage: Real-time monitoring of portfolio infrastructure
+  introMessage: Real-time monitoring of portfolio infrastructure and services
   navbar:
     - title: Status
       href: /
