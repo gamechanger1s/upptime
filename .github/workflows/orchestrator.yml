@@ -1,0 +1,144 @@
+name: Run Uptime Check 
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 min — triggers uptime check
+    - cron: "0 23 * * *"    # daily — response time
+    - cron: "0 1 * * *"     # daily — rebuild static site
+    - cron: "0 0 * * *"     # daily — graphs + summary + update-template
+    - cron: "0 3 * * *"     # daily — updates
+  workflow_dispatch:
+    inputs:
+      run_all:
+        description: "Run all pipelines"
+        required: false
+        default: "true"
+
+jobs:
+
+  # ── Runs every 5 min ──────────────────────────────────────────────────────
+  uptime:
+    name: Uptime Check
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && startsWith(github.event.schedule, '*/5'))
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "update"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+
+  # ── Runs daily at 23:00 ───────────────────────────────────────────────────
+  response-time:
+    name: Response Time
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 23 * * *')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "response-time"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+
+  # ── Runs daily at 00:00 ───────────────────────────────────────────────────
+  graphs:
+    name: Graphs
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 0 * * *')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "graphs"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+  summary:
+    name: Summary / README
+    runs-on: ubuntu-latest
+    needs: graphs
+    if: |
+      always() && (
+        github.event_name == 'workflow_dispatch' ||
+        (github.event_name == 'schedule' && github.event.schedule == '0 0 * * *')
+      )
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "readme"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+  update-template:
+    name: Update Template
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 0 * * *')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "update-template"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+  # ── Runs daily at 01:00 — after graphs/summary ────────────────────────────
+  site:
+    name: Static Site Deploy
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 1 * * *')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT || github.token }}
+          publish_dir: "site/status-page/__sapper__/export/"
+          force_orphan: "false"
+          user_name: "Upptime Bot"
+          user_email: "bot@upptime.js.org"
+
+  # ── Runs daily at 03:00 ───────────────────────────────────────────────────
+  updates:
+    name: Deploy Updates
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 3 * * *')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: upptime/updates@master
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
