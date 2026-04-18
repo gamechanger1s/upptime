@@ -3,11 +3,11 @@ repo: upptime
 
 sites:
   - name: Portfolio Website
-    url: https://chinmayportfolio.vercel.app
+    url: https://chinmay-portfolio-mu.vercel.app
   - name: Portfolio Status Page
-    url: https://chinmayportfolio.vercel.app/status
+    url: https://chinmay-portfolio-mu.vercel.app/status
   - name: Portfolio Uptime Page
-    url: https://chinmayportfolio.vercel.app/uptime
+    url: https://chinmay-portfolio-mu.vercel.app/uptime
 
 status-website:
   baseUrl: /upptime
@@ -21,7 +21,7 @@ status-website:
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
     - title: Portfolio
-      href: https://chinmayportfolio.vercel.app
+      href: https://chinmay-portfolio-mu.vercel.app
 
 workflowSchedule:
   graphs: "0 0 * * *"
