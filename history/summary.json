@@ -6,7 +6,7 @@
     "slug": "portfolio-website",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -15,42 +15,48 @@
     "timeWeek": 109,
     "timeMonth": 94,
     "timeYear": 116,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-07-15": 0
+    }
   },
   {
     "name": "Portfolio Status Page",
     "url": "https://chinmay-portfolio-mu.vercel.app/status",
     "icon": "https://icons.duckduckgo.com/ip3/chinmay-portfolio-mu.vercel.app.ico",
     "slug": "portfolio-status-page",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 54,
-    "timeDay": 126,
-    "timeWeek": 92,
-    "timeMonth": 77,
+    "timeDay": 74,
+    "timeWeek": 83,
+    "timeMonth": 75,
     "timeYear": 54,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-07-15": 0
+    }
   },
   {
     "name": "Portfolio Uptime Page",
     "url": "https://chinmay-portfolio-mu.vercel.app/uptime",
     "icon": "https://icons.duckduckgo.com/ip3/chinmay-portfolio-mu.vercel.app.ico",
     "slug": "portfolio-uptime-page",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 51,
-    "timeDay": 190,
-    "timeWeek": 101,
-    "timeMonth": 69,
+    "timeDay": 106,
+    "timeWeek": 91,
+    "timeMonth": 68,
     "timeYear": 51,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-07-15": 0
+    }
   }
 ]
