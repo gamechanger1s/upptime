@@ -4,19 +4,20 @@
     "url": "https://chinmay-portfolio-mu.vercel.app",
     "icon": "https://icons.duckduckgo.com/ip3/chinmay-portfolio-mu.vercel.app.ico",
     "slug": "portfolio-website",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "down",
+    "uptime": "99.23%",
+    "uptimeDay": "31.28%",
+    "uptimeWeek": "90.18%",
+    "uptimeMonth": "97.74%",
+    "uptimeYear": "99.23%",
     "time": 116,
-    "timeDay": 157,
-    "timeWeek": 109,
-    "timeMonth": 94,
+    "timeDay": 65,
+    "timeWeek": 86,
+    "timeMonth": 92,
     "timeYear": 116,
     "dailyMinutesDown": {
-      "2026-07-15": 0
+      "2026-07-16": 120,
+      "2026-07-15": 870
     }
   },
   {
@@ -25,18 +26,19 @@
     "icon": "https://icons.duckduckgo.com/ip3/chinmay-portfolio-mu.vercel.app.ico",
     "slug": "portfolio-status-page",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "99.23%",
+    "uptimeDay": "31.29%",
+    "uptimeWeek": "90.18%",
+    "uptimeMonth": "97.74%",
+    "uptimeYear": "99.23%",
     "time": 54,
-    "timeDay": 74,
-    "timeWeek": 83,
-    "timeMonth": 75,
+    "timeDay": 26,
+    "timeWeek": 66,
+    "timeMonth": 73,
     "timeYear": 54,
     "dailyMinutesDown": {
-      "2026-07-15": 0
+      "2026-07-16": 120,
+      "2026-07-15": 870
     }
   },
   {
@@ -45,18 +47,19 @@
     "icon": "https://icons.duckduckgo.com/ip3/chinmay-portfolio-mu.vercel.app.ico",
     "slug": "portfolio-uptime-page",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "99.23%",
+    "uptimeDay": "31.30%",
+    "uptimeWeek": "90.19%",
+    "uptimeMonth": "97.74%",
+    "uptimeYear": "99.23%",
     "time": 51,
-    "timeDay": 106,
-    "timeWeek": 91,
-    "timeMonth": 68,
+    "timeDay": 54,
+    "timeWeek": 86,
+    "timeMonth": 70,
     "timeYear": 51,
     "dailyMinutesDown": {
-      "2026-07-15": 0
+      "2026-07-16": 120,
+      "2026-07-15": 870
     }
   }
 ]
